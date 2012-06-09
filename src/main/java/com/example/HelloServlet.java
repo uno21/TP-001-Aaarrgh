@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ar.edu.unlam.pruebas.Dummy;
+
 public class HelloServlet extends HttpServlet {
 
 	@Override
@@ -17,7 +19,11 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
         
-        out.write("Hello Heroku by priscilaaa".getBytes());
+
+        out.write("Hello Heroku by priscilaaa && manu".getBytes());
+        
+        String saludo = "Desde el jar: " + new Dummy().getSaludo();
+        out.write(saludo.getBytes());
         out.flush();
         out.close();
     }
