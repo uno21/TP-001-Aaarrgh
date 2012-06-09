@@ -14,7 +14,6 @@ public class UserPassPredicate implements Predicate {
 		this.pass = pass;
 	}
 
-	@Override
 	public boolean evaluate(Object arg0) {
 		User u = (User) arg0;
 		return (u.getUsername().equals(user) && u.getPassword().equals(pass));

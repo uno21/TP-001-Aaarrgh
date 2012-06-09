@@ -18,7 +18,6 @@ public class AllTweetsPredicate implements Predicate {
 		
 	}
 	
-	@Override
 	public boolean evaluate(Object arg0) {
 
 		Tweet unTweet = (Tweet) arg0;

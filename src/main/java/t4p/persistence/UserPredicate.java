@@ -14,7 +14,6 @@ public class UserPredicate implements Predicate {
 	}
 	
 	
-	@Override
 	public boolean evaluate(Object arg0) {
 		User u = (User) arg0;
 		return (u.getUsername().equals(user));

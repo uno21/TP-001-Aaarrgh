@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ar.edu.unlam.pruebas.Dummy;
 
 public class HelloServlet extends HttpServlet {
 
@@ -22,8 +21,6 @@ public class HelloServlet extends HttpServlet {
 
         out.write("Hello Heroku by priscilaaa && manu".getBytes());
         
-        String saludo = "Desde el jar: " + new Dummy().getSaludo();
-        out.write(saludo.getBytes());
         out.flush();
         out.close();
     }

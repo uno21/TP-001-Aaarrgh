@@ -31,7 +31,6 @@ public class OurTweetDao {
 		Collection<Tweet> allUserTweets = (Collection<Tweet>)CollectionUtils.select(allTweets, allUserTweetsFilter);
 		Collections.sort((List<Tweet>) allUserTweets, new Comparator<Tweet>(){
 
-			@Override
 			public int compare(Tweet t1, Tweet t2) {
 				return t1.getTimestamp().compareTo(t2.getTimestamp());
 			}
@@ -48,7 +47,6 @@ public class OurTweetDao {
 		Collection<Tweet> allUserTweets = (List<Tweet>)CollectionUtils.select(allTweets, AllTweetsPredicate);
 		Collections.sort((List<Tweet>) allUserTweets, new Comparator<Tweet>(){
 		
-			@Override
 			public int compare(Tweet t1, Tweet t2) {
 				return t1.getTimestamp().compareTo(t2.getTimestamp());
 			}

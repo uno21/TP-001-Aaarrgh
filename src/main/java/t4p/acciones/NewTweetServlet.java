@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import t4p.model.IdTweetGenerator;
 import t4p.model.Tweet;
 import t4p.model.User;
+import t4p.persistence.DaoFactory;
 import t4p.servicios.ServiceLocator;
 import t4p.servicios.TweetService;
-import t4p.persistence.DaoFactory;
 
 
 

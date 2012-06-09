@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import t4p.model.User;
-import t4p.persistence.DaoFactory;
 import t4p.servicios.ServiceLocator;
 import t4p.servicios.UserService;
 
