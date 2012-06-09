@@ -99,7 +99,7 @@
           
           <p>
             This is a template for a web application that uses embedded Jetty. 
-            The sample code consists of a JSP (this page) and a <a href="hello">simple servlet</a>. 
+            The sample code consists of a JSP (this page) and a <a href="/aaarrgh/hello">simple servlet</a>. 
             Take a look around and then use Eclipse or the Command Line to deploy some changes.
           </p>
           
@@ -266,7 +266,7 @@
               <div class="hero-unit">
                 <h1>Done!</h1>
                 <p>You've just cloned, modified, and deployed a brand new app.</p>
-                <a href="/hello" class="btn btn-primary btn-large">See your changes</a>
+                <a href="hello" class="btn btn-primary btn-large">See your changes</a>
                 
                 <p style="margin-top: 20px">Learn more at the   
                 <a href="http://devcenter.heroku.com/categories/java">Heroku Dev Center</a></p>
