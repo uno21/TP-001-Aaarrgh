@@ -19,7 +19,7 @@
 			<groupId>ar.edu.unlam.dao</groupId>
 			<artifactId>dao</artifactId>
 			<version>1.0</version>
-			<systemPath>${basedir}/jar/t4p-dao.jar</systemPath>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/t4p-dao.jar</systemPath>
 			<scope>system</scope>
 		</dependency>
 
@@ -27,7 +27,7 @@
 			<groupId>ar.edu.unlam.model</groupId>
 			<artifactId>model</artifactId>
 			<version>1.0</version>
-			<systemPath>${basedir}/jar/t4p-model.jar</systemPath>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/t4p-model.jar</systemPath>
 			<scope>system</scope>
 		</dependency>
 
