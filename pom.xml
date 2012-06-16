@@ -17,7 +17,7 @@
 
 		<dependency>
 			<groupId>ar.edu.unlam.dao</groupId>
-			<artifactId>prueba</artifactId>
+			<artifactId>dao</artifactId>
 			<version>1.0</version>
 			<systemPath>${basedir}/jar/t4p-dao.jar</systemPath>
 			<scope>system</scope>
@@ -25,7 +25,7 @@
 
 		<dependency>
 			<groupId>ar.edu.unlam.model</groupId>
-			<artifactId>prueba</artifactId>
+			<artifactId>model</artifactId>
 			<version>1.0</version>
 			<systemPath>${basedir}/jar/t4p-model.jar</systemPath>
 			<scope>system</scope>
