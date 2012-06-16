@@ -40,12 +40,12 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>editProfile</servlet-name>
+    <servlet-name>editprofile</servlet-name>
     <servlet-class>t4p.acciones.EditProfileServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>editProfile</servlet-name>
+    <servlet-name>editprofile</servlet-name>
     <url-pattern>/editprofile.do</url-pattern>
   </servlet-mapping>	
   
@@ -81,12 +81,12 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>otherProfile</servlet-name>
+    <servlet-name>others</servlet-name>
     <servlet-class>t4p.acciones.OtherProfileServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>otherProfile</servlet-name>
+    <servlet-name>others</servlet-name>
     <url-pattern>/others.do</url-pattern>
   </servlet-mapping>
   
@@ -97,7 +97,7 @@
 
   <servlet-mapping>
     <servlet-name>popUp</servlet-name>
-    <url-pattern>/popup.do</url-pattern>
+    <url-pattern>/popUp.do</url-pattern>
   </servlet-mapping>
   
   <servlet>

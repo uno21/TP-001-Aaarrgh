@@ -109,8 +109,8 @@
 		        	
 		        		<div>
 		        			<div>
-		        			<a style="padding-right:10px" href="#" Onclick="window.open('popUp.jsp?arroba=@<%=unTweet.getAuthor().getUsername() %>' ,'Responder','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=1000, height=400')">Responder</a>
-		        			<a href="popup.do" Onclick="window.open('popUp.jsp?arroba=@<%=unTweet.getAuthor().getUsername() %>' ,'Responder','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=1000, height=400')">Hilo</a> 	
+		        			<a style="padding-right:10px" href="#" Onclick="window.open('popUp.do?arroba=@<%=unTweet.getAuthor().getUsername() %>' ,'Responder','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=1000, height=400')">Responder</a>
+		        			<a href="popup.do" Onclick="window.open('popUp.do?arroba=@<%=unTweet.getAuthor().getUsername() %>' ,'Responder','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=1000, height=400')">Hilo</a> 	
 		        		</div>
 		        	
 		        	

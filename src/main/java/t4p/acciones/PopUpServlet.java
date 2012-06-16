@@ -60,9 +60,8 @@ public class PopUpServlet extends HttpServlet {
 		Collection<Tweet> allTweets = tweetService.getTweetByUser(usuario);
 		Collection<Tweet> tweetsMentionMe = tweetService.getAllTweets(usuario);
 	
-		
-		
 		request.setAttribute("HiloConversacion", tweetsMentionMe);
+		request.setAttribute("usuario", username);
 		
 		RequestDispatcher path = request.getRequestDispatcher("popUp.jsp");
 		path.forward(request, response);
