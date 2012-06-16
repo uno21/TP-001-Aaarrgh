@@ -17,7 +17,7 @@ import t4p.servicios.UserService;
 /**
  * Servlet implementation class EditProfileServlet
  */
-@WebServlet("/editprofile.do")
+
 public class EditProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

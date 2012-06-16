@@ -16,7 +16,7 @@ import t4p.servicios.UserService;
 /**
  * Servlet implementation class FollowServlet
  */
-@WebServlet("/follow.do")
+
 public class FollowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

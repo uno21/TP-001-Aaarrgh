@@ -20,7 +20,7 @@ import t4p.servicios.UserService;
 /**
  * Servlet implementation class TimelineServlet
  */
-@WebServlet("/timeline.do")
+
 public class TimelineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -20,7 +20,7 @@ import t4p.servicios.UserService;
 /**
  * Servlet implementation class ProfileServlet
  */
-@WebServlet("/profile.do")
+
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

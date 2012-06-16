@@ -23,7 +23,7 @@ import t4p.servicios.TweetService;
 /**
  * Servlet implementation class NewTweetServlet
  */
-@WebServlet("/newTweet.do")
+
 public class NewTweetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -20,7 +20,7 @@ import t4p.servicios.UserService;
 /**
  * Servlet implementation class PopUpServlet
  */
-@WebServlet("/popup.do")
+
 public class PopUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int List = 0;
