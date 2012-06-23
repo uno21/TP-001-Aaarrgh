@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -28,6 +29,8 @@ public class HelloServlet extends HttpServlet {
 
 /**/
         try{
+        	
+        	out.write("entro al try");
 	        Connection connectionManager = ConnectionProvider.getConnection();
 	    	
 			PreparedStatement statement = connectionManager
@@ -42,6 +45,8 @@ public class HelloServlet extends HttpServlet {
 			}
         }catch(Exception ex){
         	
+        	StackTraceElement[] a = ex.getStackTrace();
+        	out.write("Error: " + Arrays.asList(a));
         }
 /**/
         
