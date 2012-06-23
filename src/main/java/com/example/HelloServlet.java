@@ -47,6 +47,8 @@ public class HelloServlet extends HttpServlet {
         	
         	StackTraceElement[] a = ex.getStackTrace();
         	out.write("Error: " + Arrays.asList(a));
+        	out.write("Detalles:" + ex.getMessage());
+        	out.write("Excepcion Lanzada: " + ex.getCause());
         }
 /**/
         
