@@ -34,7 +34,7 @@ public class HelloServlet extends HttpServlet {
 	        Connection connectionManager = ConnectionProvider.getConnection();
 	    	
 			PreparedStatement statement = connectionManager
-					.prepareStatement("select '1' as prueba");
+					.prepareStatement("select 1 as prueba");
 	
 			ResultSet result = statement.executeQuery();
 			
