@@ -27,6 +27,8 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
          PrintWriter out = resp.getWriter();
 
+         resp.setContentType("text/plain");
+         
 /**/
         try{
         	
@@ -40,7 +42,7 @@ public class HelloServlet extends HttpServlet {
 			
 			if (result.next()) {
 				
-				out.write(result.getInt("prueba"));
+				out.write(result.getInt("prueba") + "");
 				
 			}
         }catch(Exception ex){
