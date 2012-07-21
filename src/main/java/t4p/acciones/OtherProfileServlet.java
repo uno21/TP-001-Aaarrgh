@@ -50,21 +50,20 @@ public class OtherProfileServlet extends HttpServlet {
 		String idUser = request.getParameter("profile");
 		Long id = Long.parseLong(idUser);
 		User usuarioPerfil = userService.findById(id);
-		
+		boolean flag = userService.dejarDeSeguir(usuario, usuarioPerfil);
 		List<User> followers = usuarioPerfil.getFollowers();
 		List<User> following = usuarioPerfil.getFollowing();
-
-		
+			
 		TweetService tweetService = ServiceLocator.getInstance().getTweetService();
 		Collection<Tweet> allTweets = tweetService.getTweetByUser(usuarioPerfil);
-		int numberOfTweets = tweetService.getNumberOfTweets(usuarioPerfil);
-		
+	
 		request.setAttribute("usuarioPerfil", usuarioPerfil);
 		request.setAttribute("tweetsUsuario", allTweets);
 		request.setAttribute("seguidores", followers);
 		request.setAttribute("siguiendo", following);
-		request.setAttribute("improperios", numberOfTweets);
-		
+		request.setAttribute("improperios", allTweets.size());
+	//	request.setAttribute("flagDejarSeguir", flag);
+
 		
 		RequestDispatcher ruta = request.getRequestDispatcher("otherProfile.jsp");
 		ruta.forward(request, response);

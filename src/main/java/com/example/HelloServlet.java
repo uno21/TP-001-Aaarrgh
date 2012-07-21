@@ -36,13 +36,13 @@ public class HelloServlet extends HttpServlet {
 	        Connection connectionManager = ConnectionProvider.getConnection();
 	    	
 			PreparedStatement statement = connectionManager
-					.prepareStatement("select 1 as prueba");
+					.prepareStatement("select usuario from usuarios");
 	
 			ResultSet result = statement.executeQuery();
 			
 			if (result.next()) {
-				
-				out.write(result.getInt("prueba") + "");
+				//System.out.println(result.getString("usuario")+ "prisciña");
+				out.write(result.getString("usuario")+ "");
 				
 			}
         }catch(Exception ex){

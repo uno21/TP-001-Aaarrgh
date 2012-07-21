@@ -43,7 +43,7 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		UserService userService =  ServiceLocator.getInstance().getUserService();
+	//	UserService userService =  ServiceLocator.getInstance().getUserService();
 		User usuario = (User)request.getSession().getAttribute(SessionConstants.USER);
 		
 		List<User> followers = usuario.getFollowers();
@@ -51,7 +51,7 @@ public class ProfileServlet extends HttpServlet {
 		
 	
 		TweetService tweetService = ServiceLocator.getInstance().getTweetService();
-		String username = usuario.getUsername();
+	//	String username = usuario.getUsername();
 		
 		int numberOfTweets = tweetService.getNumberOfTweets(usuario);
 		

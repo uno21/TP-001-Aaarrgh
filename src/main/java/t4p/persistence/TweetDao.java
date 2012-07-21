@@ -9,7 +9,7 @@ public interface TweetDao {
 
 	public abstract Collection<Tweet> findAll();
 
-	public abstract Tweet findById(Long id);
+	public abstract Tweet findById(int id);
 
 	public abstract boolean delete(Tweet tweet);
 

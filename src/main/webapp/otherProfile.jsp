@@ -19,7 +19,7 @@
 <body>
 <div id="contenedor">
 	<div id="navegacion">
-    <div id="imgLogo">
+    	<div id="imgLogo">
 			<img src="img/t4p.png" height ="50"id="logo"/>
 		</div>  
 		<div class="titulos">
@@ -31,23 +31,23 @@
     
     <div id="contenido">
     	<%	
+    		//boolean flag = (boolean)request.getAttribute("flagDejarSeguir");
   			User usuarioPerfil = (User)request.getAttribute("usuarioPerfil");
     		List <User> following = (List<User>) request.getAttribute("siguiendo");
     		List <User> followers = (List<User>) request.getAttribute("seguidores");
   	  	%>
   	  	<div id="imgUser">
-  	  		<img src="img/<%=usuarioPerfil.getUsername()%>100.png">
+  	  		<img src="<%=usuarioPerfil.getFoto()%>">
   	  	</div>
 		<div id="usuario">
             <p class="username"><%=usuarioPerfil.getFullName()%> (@<%=usuarioPerfil.getUsername()%>)</p>
             <p><%=usuarioPerfil.getDescription() %> </p>
 			
 			<!-- Follow / UnFollow -->	            
-            <p><% List <User> followingMe = usuario.getFollowing();
+            <p><% List <User> followingMe = usuarioPerfil.getFollowing();
 	 					
-	 					if(followingMe.contains(usuarioPerfil)){
-	 					
-	 						%><span>
+	 					if(followingMe.contains(usuarioPerfil)){%>
+	 					<span>
 	 						<form  action="unfollow.do" method="post">
 	 						<input type="hidden" value="<%=usuarioPerfil.getUsername()%>" id="datoUsuario" name="datoUsuario">
 	 						<input type="submit" value="Dejar de seguir!" id="noSeguir" name="noSeguir" />
@@ -82,15 +82,16 @@
       	 	<div id="improperios" class="tab_content">
         		<div id="datos">
         		<%Collection<Tweet> tweets = (Collection<Tweet>) request.getAttribute("tweetsUsuario");
-        
+        		  if(tweets.size() > 0 ){
 			        for(Tweet unTweet: tweets){
 			        	%>
 			        	<div><%= unTweet.getText()%><br>
-			        		<%=unTweet.getTimestamp() %><br>
+			        		<!--<%=unTweet.getTimestamp() %>--><br>
 			        		
 			        	</div>
 			        	<% 
        				 }
+       			 } 
         		%>
         		</div>
         	</div>
@@ -98,7 +99,7 @@
         		<div id="datos">
 	        		<%
 	    	 			for(User u : following){%>
-		 				<p><img src="img/<%=u.getUsername()%>40.png"/>
+		 				<p><img src="<%=u.getFoto()%>"/>
 		 					<a href="others.do?profile=<%=u.getId()%>">@<%=u.getUsername() %></a><br>
 		 					<%=u.getDescription() %>
 		 				</p>
@@ -110,7 +111,7 @@
         		<div id="datos">
 	        		<%
 	    	 			for(User u : followers){%>
-		 				<p><img src="img/<%=u.getUsername()%>40.png"/>
+		 				<p><img src="<%=u.getFoto()%>"/>
 		 					<a href="others.do?profile=<%=u.getId()%>">@<%=u.getUsername() %></a><br>
 		 					<%=u.getDescription() %>
 		 				</p>

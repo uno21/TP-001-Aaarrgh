@@ -9,22 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import t4p.model.User;
-import t4p.servicios.ServiceLocator;
-import t4p.servicios.UserService;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class ErrorServlet
  */
 
 
-public class LoginServlet extends HttpServlet {
+public class ErrorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet
      */
-    public LoginServlet() {
+    public ErrorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,28 +40,8 @@ public class LoginServlet extends HttpServlet {
 		
 		/*
 		 */
-		
-		String user = request.getParameter("username");
-		String pass = request.getParameter("password");
-		request.setAttribute("username", user);
-	
-		UserService userService = ServiceLocator.getInstance().getUserService();
-		boolean correcto = userService.verifyUser(user, pass);
-		
-		
-		if(correcto){
-			User usuario = userService.findByUsername(user);
-			request.getSession().setAttribute(SessionConstants.USER, usuario);
-			
-			RequestDispatcher a = request.getRequestDispatcher("timeline.do");
-			a.forward(request, response);
-		}
-		
-		else{
-			
-			RequestDispatcher a = request.getRequestDispatcher("error.do");
-			a.forward(request, response);
-		}
+		RequestDispatcher ruta = request.getRequestDispatcher("error.jsp");
+		ruta.forward(request, response);
 	}
 
 }

@@ -19,4 +19,12 @@ public class UserPassPredicate implements Predicate {
 		return (u.getUsername().equals(user) && u.getPassword().equals(pass));
 	}
 
+	
+	public String getUser() {
+		return this.user;
+	}
+	
+	public String getPass() {
+		return this.pass;
+	}
 }

@@ -24,7 +24,8 @@
 <div id="contenedor">
 	<div id="navegacion">
     <div id="imgLogo">
-			<img src="img/t4p.png" height ="50"id="logo"/>
+			<img src="http://www.gifss.com/aves/loros/loro1.gif" height ="50"id="logo"/>
+			
 		</div>  
 		<div class="titulos">
 <!-- Inicio de Elementos de Menu  -->
@@ -49,7 +50,7 @@
             <p>
 	            <% List <User> following = (List<User>) request.getAttribute("siguiendo");
 	        	 		for(User u : following){%>
-	        	 			<span><a href="others.do?profile=<%=u.getId()%>"><img src="img/<%=u.getUsername()%>25.png"/></a></span>
+	        	 			<span><a href="others.do?profile=<%=u.getId()%>"><img src="<%=u.getFoto()%>"/></a></span>
 	        	 <%		}
 	        	 %>
         	</p>
@@ -57,7 +58,7 @@
             <p>
 	            <% List <User> followers = (List<User>) request.getAttribute("seguidores");
 	        	 		for(User u : followers){%>
-	        	 			<span><a href="others.do?profile=<%=u.getId()%>"><img src="img/<%=u.getUsername()%>25.png"/></a></span>
+	        	 			<span><a href="others.do?profile=<%=u.getId()%>"><img src="<%=u.getFoto()%>"/></a></span>
 	        	 <%		}
 	        	 %>
             </p>
@@ -69,13 +70,13 @@
 		        	
 		        	<div id="tweetItem">
 		        		<div id="itemPicture">
-		        			<img src="img/<%=unTweet.getAuthor().getUsername()%>40.png"/>
+		        			<img src="<%=(String)request.getAttribute("foto") %>"/>
 		        			<a class="infoLink" href="others.do?profile=<%=unTweet.getAuthor().getId()%>"><%=unTweet.getAuthor().getUsername()%></a>
 		        		</div>
 		        		<div class="separator"></div>
 		        		<div id="itemInfo">
 		        			<div class="infoText"><%= unTweet.getText()%></div>
-		        			<div class="infoDate"><%= unTweet.getTimestamp()%></div>
+		        			<!--<div class="infoDate"><%= unTweet.getTimestamp()%></div>-->
 		        		</div>
 		        	</div>
 		        	<% 

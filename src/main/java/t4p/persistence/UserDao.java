@@ -16,5 +16,9 @@ public interface UserDao {
 	public abstract void insert(User user);
 
 	public abstract void update(User user);
+	
+	public abstract void agregarSeguidor(User user, User user1);
+	
+	
 
 }

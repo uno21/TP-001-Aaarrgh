@@ -101,7 +101,7 @@ public class MockDataBase {
 
 	private User buildUser(String username, String name, String description) {
 		User user = new User();
-		user.setId(userId++);
+		//user.setId(userId++);
 		user.setUsername(username);
 		user.setPassword(PASSWORD);
 		user.setFullName(name);

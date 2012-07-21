@@ -21,10 +21,10 @@ public class ConnectionProvider {
 			String connParam = "jdbc:postgresql://localhost/test?user=fred&password=secret";
 			//theConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PersonProject?" + "user=root&password=mysql" );
 			/*Local
-			 * theConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5433/aaarrgh?user=manu&password=manu");
+			  theConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5433/aaarrgh?user=postgres&password=Goodcharlotte3");
 			 */
-			
-				theConnection = DriverManager.getConnection("jdbc:postgresql://ec2-23-23-223-68.compute-1.amazonaws.com/zjvhatsnun?user=zjvhatsnun&password=sMxj1CQfWzFEFpMhx1xJ");
+			 theConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/aaarrgh?user=postgres&password=Goodcharlotte3");
+			//theConnection = DriverManager.getConnection("jdbc:postgresql://ec2-23-23-223-68.compute-1.amazonaws.com/zjvhatsnun?user=zjvhatsnun&password=sMxj1CQfWzFEFpMhx1xJ");
 		}
 		
 		} catch (Exception e) {

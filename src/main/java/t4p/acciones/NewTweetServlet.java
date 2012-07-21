@@ -16,6 +16,7 @@ import t4p.model.User;
 import t4p.persistence.DaoFactory;
 import t4p.servicios.ServiceLocator;
 import t4p.servicios.TweetService;
+import t4p.servicios.UserService;
 
 
 
@@ -55,19 +56,27 @@ public class NewTweetServlet extends HttpServlet {
 			TweetService tweetService = ServiceLocator.getInstance().getTweetService();
 			Collection<Tweet> allTweets = tweetService.getAllTweets(tweetAuthor);
 			
-			IdTweetGenerator IdTweetGenerated = IdTweetGenerator.getInstance();
-			IdTweetGenerated.setBaseCollection(allTweets);
+			//IdTweetGenerator IdTweetGenerated = IdTweetGenerator.getInstance();
+			//IdTweetGenerated.setBaseCollection(allTweets);
 			
-			Long IdTweet = IdTweetGenerated.GenerateId();
-			
+			//Long IdTweet = IdTweetGenerated.GenerateId();
 			Tweet newTweet = new Tweet();
+			String s = "@"; 
+			if(tweetText.contains(s)==true){
+				UserService userService = ServiceLocator.getInstance().getUserService();
+				newTweet.setMentions(userService.getMention(tweetText));
+			}
+			else {
+				newTweet.setMentions(null);
+			};
+			
 			
 			newTweet.setAuthor(tweetAuthor);
 			newTweet.setText(tweetText);
-			newTweet.setTimestamp(new Date());
-			newTweet.setId(IdTweet);
+			//newTweet.setTimestamp(new Date());
+			//newTweet.setId(tweetService.);
 			
-			DaoFactory.getInstance().getTweetDao().insert(newTweet);
+			tweetService.insertTweet(newTweet);
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(dispatcherPage);
 		dispatcher.forward(request, response);

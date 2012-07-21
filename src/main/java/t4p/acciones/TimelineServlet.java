@@ -43,27 +43,25 @@ public class TimelineServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
-		UserService userService =  ServiceLocator.getInstance().getUserService();
-		
-		User usuario = (User)request.getSession().getAttribute(SessionConstants.USER);
-		String username = usuario.getUsername();
-	
-							
-		List<User> followers = usuario.getFollowers();
-		List<User> following = usuario.getFollowing();
-		
-				
-
+		//UserService userService =  ServiceLocator.getInstance().getUserService();
 		TweetService tweetService = ServiceLocator.getInstance().getTweetService();
-		Collection<Tweet> allTweets = tweetService.getAllTweets(usuario);
+		User usuario = (User)request.getSession().getAttribute(SessionConstants.USER);
 		
+		
+		Collection<Tweet> allTweets = tweetService.getAllTweets(usuario);		
+		String username = usuario.getUsername();
+		Collection<User> followers = usuario.getFollowers();
+		Collection<User> following = usuario.getFollowing();
 		int numberOfTweets = tweetService.getNumberOfTweets(usuario);
+		String urlFoto = usuario.getFoto(); 				
+		
 		
 		request.setAttribute("allUserTweets", allTweets);
 		request.setAttribute("usuario", username);
 		request.setAttribute("seguidores", followers);
 		request.setAttribute("siguiendo", following);
 		request.setAttribute("improperios", numberOfTweets);
+		request.setAttribute("foto", urlFoto);
 		
 		RequestDispatcher ruta = request.getRequestDispatcher("timeline.jsp");
 		ruta.forward(request, response);

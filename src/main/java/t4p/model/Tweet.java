@@ -5,16 +5,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Tweet {
-	private Long id;
+	private long id;
 	private String text;
 	private Date timestamp;
 	private Tweet previous;
 	private User author;
-	private List<User> mentions = new LinkedList<User>();
-	public Long getId() {
+	private User mention;
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getText() {
@@ -41,14 +41,14 @@ public class Tweet {
 	public void setAuthor(User author) {
 		this.author = author;
 	}
-	public List<User> getMentions() {
-		return mentions;
+	public User getMentions() {
+		return mention;
 	}
-	public void setMentions(List<User> mentions) {
-		this.mentions = mentions;
+	public void setMentions(User mention) {
+		this.mention = mention;
 	}
-	public boolean addMentions(User e) {
-		return mentions.add(e);
-	}
+//	public boolean addMentions(User e) {
+	//	return mention.add(e);
+//	}
 	
 }

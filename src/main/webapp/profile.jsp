@@ -37,7 +37,7 @@
     	
   	  	%>
   	  	<div id="imgUser">
-  	  		<img src="img/<%=username%>100.png">
+  	  		<img src="<%=usuario.getFoto()%>">
   	  	</div>
 		<div id="usuario">
             <p class="username"><%=usuario.getFullName()%> (@<%=username%>)</p>
@@ -64,7 +64,7 @@
 			        for(Tweet unTweet: tweets){
 			        	%>
 			        	<div><%= unTweet.getText()%><br>
-			        		<%=unTweet.getTimestamp() %><br>
+			        		<!--<%=unTweet.getTimestamp() %><br>-->
 			        		
 			        	</div>
 			        	<% 
@@ -77,7 +77,7 @@
         		<div id="datos">
         		<%
     	 			for(User u : following){%>
-	 				<p><img src="img/<%=u.getUsername()%>40.png"/>
+	 				<p><img src="<%=u.getFoto()%>"/>
 	 					<a href="others.do?profile=<%=u.getId()%>">@<%=u.getUsername() %></a><br>
 	 					<%=u.getDescription() %>
 	 				</p>
@@ -89,7 +89,7 @@
         		<div id="datos">
         		<%
     	 			for(User u : followers){%>
-	 				<p><img src="img/<%=u.getUsername()%>40.png"/>
+	 				<p><img src="<%=u.getFoto()%>"/>
 	 					<a href="others.do?profile=<%=u.getId()%>">@<%=u.getUsername() %></a><br>
 	 					<%=u.getDescription() %>
 	 				</p>
@@ -102,7 +102,7 @@
         		 <%  Collection<Tweet> tweetsMention = (Collection<Tweet>) request.getAttribute("menciones");
 	        
 		        for(Tweet unTweet: tweetsMention){%>
-		        	<p><img src="img/<%=unTweet.getAuthor().getUsername()%>40.png"/>
+		        	<p><img src="<%=unTweet.getAuthor().getFoto()%>"/>
 	 					<a href="others.do?profile=<%=unTweet.getAuthor().getId()%>">@<%=unTweet.getAuthor().getUsername() %></a><br>
 		        	<div><%= unTweet.getText()%></div>
 		        	</p>

@@ -47,11 +47,11 @@ public class FollowServlet extends HttpServlet {
 		String idUser = String.valueOf(nuevoUsuario.getId());
 		
 		
-		usuario.addFollowing(nuevoUsuario);
-		nuevoUsuario.addFollower(usuario);
-		
-		
-		
+		//usuario.addFollowing(nuevoUsuario);
+		//nuevoUsuario.addFollower(usuario);
+		//ServiceLocator.getInstance().getUserService().
+		userService.agregarSeguidor(nuevoUsuario,usuario);
+		//userService.agregarSiguiendo(usuario,nuevoUsuario);
 		request.setAttribute("usuarioPerfil", nuevoUsuario);
 		
 		String dispatcherPage = "others.do?profile=".concat(idUser);

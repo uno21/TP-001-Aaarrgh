@@ -41,4 +41,10 @@ public class TweetService {
 	public Collection<Tweet> getTweetsHilo(User user){
 		return(OurTweetDao.getInstance().getTweetsHilo(user));
 	}
+	
+	public void insertTweet(Tweet newTweet){
+		OurTweetDao.getInstance().insertTweet(newTweet);
+	}
+	
+
 }

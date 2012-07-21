@@ -29,7 +29,18 @@
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>	
   
-    <servlet>
+  <servlet>
+    <servlet-name>error</servlet-name>
+    <servlet-class>t4p.acciones.ErrorServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>error</servlet-name>
+    <url-pattern>/error.do</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
     <servlet-name>timeline</servlet-name>
     <servlet-class>t4p.acciones.TimelineServlet</servlet-class>
   </servlet>
@@ -38,6 +49,7 @@
     <servlet-name>timeline</servlet-name>
     <url-pattern>/timeline.do</url-pattern>
   </servlet-mapping>
+  
   
   <servlet>
     <servlet-name>editprofile</servlet-name>
